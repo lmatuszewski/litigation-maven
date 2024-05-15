@@ -2,9 +2,9 @@ package at.allianz.litigation.domain;
 
 public enum LitigationType {
 
-    ADMINISTRATIVE_PROCEEDING("Administrative proceeding"),
-    ALTERNATIVE_DISPUTE_RESOLUTION("Alternative dispute resolution"),
-    ARBITRATION_PROCEEDING("Arbitration proceeding");
+    ADMINISTRATIVE_PROCEEDING("ADMINISTRATIVE_PROCEEDING"),
+    ALTERNATIVE_DISPUTE_RESOLUTION("ALTERNATIVE_DISPUTE_RESOLUTION"),
+    ARBITRATION_PROCEEDING("ARBITRATION_PROCEEDING");
 
     private String value;
 
