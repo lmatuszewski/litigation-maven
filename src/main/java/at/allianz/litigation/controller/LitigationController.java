@@ -23,6 +23,11 @@ public class LitigationController {
         return litigationRepository.findAll();
     }
 
+    @GetMapping("/claim/{claimNumber}/litigations")
+    List<Litigation> findByClaimNumber(@PathVariable String claimNumber) {
+        return litigationRepository.findAllByClaimNumber(claimNumber);
+    }
+
     @GetMapping("/litigations/{id}")
     Litigation get(@PathVariable String id) {
         return litigationRepository.findById(id).get();
@@ -49,7 +54,7 @@ public class LitigationController {
         return litigationRepository.save(litigation);
     }
 
-    @GetMapping("/litigations/delete/{id}")
+    @DeleteMapping("/litigations/{id}")
     void delete(@PathVariable String id) {
         litigationRepository.deleteById(id);
     }

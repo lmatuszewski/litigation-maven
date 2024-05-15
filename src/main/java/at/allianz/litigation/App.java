@@ -25,13 +25,13 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        String claimNumber = UUID.randomUUID().toString();
+        String claimNumber = "claim1";
         litigationRepository.save(new Litigation(claimNumber, ADMINISTRATIVE_PROCEEDING, REASON1));
         litigationRepository.save(new Litigation(claimNumber, ALTERNATIVE_DISPUTE_RESOLUTION, REASON2));
         litigationRepository.save(new Litigation(claimNumber, ARBITRATION_PROCEEDING, REASON1));
 
-        String claimNumber2 = UUID.randomUUID().toString();
+        String claimNumber2 = "claim2";
         litigationRepository.save(new Litigation(claimNumber2, ADMINISTRATIVE_PROCEEDING, REASON2));
-        litigationRepository.save(new Litigation(claimNumber, ARBITRATION_PROCEEDING, REASON1));
+        litigationRepository.save(new Litigation(claimNumber2, ARBITRATION_PROCEEDING, REASON1));
     }
 }
