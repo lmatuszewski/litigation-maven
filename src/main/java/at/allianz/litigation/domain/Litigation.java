@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import org.hibernate.annotations.UuidGenerator;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -43,10 +45,10 @@ public class Litigation {
 //    @OneToOne
 //    private User createdBy;
 
-    @JsonIgnore
+    @CreatedDate
     private Date createdAt;
 
-    @JsonIgnore
+    @LastModifiedDate
     private Date updatedAt;
 
     public Litigation() {}
