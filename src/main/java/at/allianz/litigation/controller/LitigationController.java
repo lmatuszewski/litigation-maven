@@ -15,11 +15,6 @@ public class LitigationController {
     @Autowired
     LitigationRepository litigationRepository;
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello!";
-    }
-
     @GetMapping("/")
     List<Litigation> all() {
         return litigationRepository.findAll();
@@ -35,6 +30,7 @@ public class LitigationController {
         return litigationRepository.findById(id).get();
     }
 
+    /*
     @PostMapping("/")
     Litigation crate(@RequestBody Litigation litigation) {
         return litigationRepository.save(litigation);
@@ -56,4 +52,5 @@ public class LitigationController {
     void delete(@PathVariable String id) {
         litigationRepository.deleteById(id);
     }
+     */
 }
