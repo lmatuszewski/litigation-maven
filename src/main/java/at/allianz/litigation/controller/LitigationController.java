@@ -30,12 +30,12 @@ public class LitigationController {
         return litigationRepository.findById(id).get();
     }
 
-    /*
     @PostMapping("/")
     Litigation crate(@RequestBody Litigation litigation) {
         return litigationRepository.save(litigation);
     }
 
+    /*
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Litigation update(@PathVariable("id") final String id, @RequestBody final Litigation newLitigation) {
