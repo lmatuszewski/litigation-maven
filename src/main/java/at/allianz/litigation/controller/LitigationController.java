@@ -35,7 +35,6 @@ public class LitigationController {
         return litigationRepository.save(litigation);
     }
 
-    /*
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Litigation update(@PathVariable("id") final String id, @RequestBody final Litigation newLitigation) {
@@ -52,5 +51,4 @@ public class LitigationController {
     void delete(@PathVariable String id) {
         litigationRepository.deleteById(id);
     }
-     */
 }
