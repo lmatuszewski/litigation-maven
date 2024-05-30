@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -20,8 +21,13 @@ public class Litigation {
     @UuidGenerator
     private String id;
 
+    @NotNull
     private String claimNumber;
+
+    @NotNull
     private LitigationType type;
+
+    @NotNull
     private LitigationReason reason;
 
     @JsonIgnore

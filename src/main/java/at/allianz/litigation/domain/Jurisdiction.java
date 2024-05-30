@@ -22,6 +22,7 @@ public class Jurisdiction {
     @NotNull
     private String litigationId;
 
+    @NotNull
     private JurisdictionLevel level;
 
     private String court;
