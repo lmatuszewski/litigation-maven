@@ -1,0 +1,42 @@
+[
+  {
+    "id": "49f41200-9320-4de5-8350-306f375c29c0",
+    "claimNumber": "claim-1",
+    "type": "ADMINISTRATIVE_PROCEEDING",
+    "reason": "REASON1",
+    "createdAt": "2024-06-05T10:31:52.726+00:00",
+    "updatedAt": "2024-06-05T10:31:52.726+00:00"
+  },
+  {
+    "id": "f9cb7150-2ac8-4b07-b7d7-64e460b21647",
+    "claimNumber": "claim-1",
+    "type": "ALTERNATIVE_DISPUTE_RESOLUTION",
+    "reason": "REASON2",
+    "createdAt": "2024-06-05T10:31:52.747+00:00",
+    "updatedAt": "2024-06-05T10:31:52.747+00:00"
+  },
+  {
+    "id": "15a0457c-1ba9-4555-9c8f-06d11a3d1b4e",
+    "claimNumber": "claim-1",
+    "type": "ARBITRATION_PROCEEDING",
+    "reason": "REASON1",
+    "createdAt": "2024-06-05T10:31:52.747+00:00",
+    "updatedAt": "2024-06-05T10:31:52.747+00:00"
+  },
+  {
+    "id": "25b08415-d918-4dff-8a13-3c26a58649be",
+    "claimNumber": "claim-2",
+    "type": "ADMINISTRATIVE_PROCEEDING",
+    "reason": "REASON2",
+    "createdAt": "2024-06-05T10:31:52.748+00:00",
+    "updatedAt": "2024-06-05T10:31:52.748+00:00"
+  },
+  {
+    "id": "cccf34e0-c5a4-43cb-aeb3-1d075182b29f",
+    "claimNumber": "claim-2",
+    "type": "ARBITRATION_PROCEEDING",
+    "reason": "REASON1",
+    "createdAt": "2024-06-05T10:31:52.749+00:00",
+    "updatedAt": "2024-06-05T10:31:52.749+00:00"
+  }
+]

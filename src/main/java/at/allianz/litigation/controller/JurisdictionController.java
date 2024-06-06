@@ -3,6 +3,7 @@ package at.allianz.litigation.controller;
 import at.allianz.litigation.domain.Jurisdiction;
 import at.allianz.litigation.repository.JurisdictionRepository;
 import at.allianz.litigation.repository.LitigationRepository;
+import jakarta.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,7 +37,7 @@ public class JurisdictionController {
     }
 
     @PostMapping("/")
-    ResponseEntity<?> crate(@RequestBody Jurisdiction jurisdiction) {
+    ResponseEntity<?> crate(@Valid @RequestBody Jurisdiction jurisdiction) {
         String litigationId = jurisdiction.getLitigationId();
         if (StringUtils.isEmpty(litigationId)) {
             return ResponseEntity.badRequest().body("LitigationId can't be empty");

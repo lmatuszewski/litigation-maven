@@ -2,12 +2,20 @@ package at.allianz.litigation.domain;
 
 //import org.springframework.data.annotation.Id;
 
-//@Entity
-public class User {
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.UuidGenerator;
 
-//    @Id
-//    @UuidGenerator
+//@Entity
+public class Person {
+
+    @Id
+    @UuidGenerator
     private String id;
+
+    @NotNull
+    private String claimNumber;
+
 
     private String firstName;
     private String lastName;
