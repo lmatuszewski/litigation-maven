@@ -39,11 +39,11 @@ public class LitigationController {
     @ResponseStatus(HttpStatus.OK)
     public Litigation update(@PathVariable("id") final String id, @RequestBody final Litigation newLitigation) {
         Litigation litigation = litigationRepository.findById(id).get();
-        litigation.setCaseNumber(newLitigation.getCaseNumber());
+//        litigation.setCaseNumber(newLitigation.getCaseNumber());
         litigation.setClaimNumber(newLitigation.getClaimNumber());
         litigation.setType(newLitigation.getType());
         litigation.setReason(newLitigation.getReason());
-        litigation.setNumberOfJointPlaintiffs(newLitigation.getNumberOfJointPlaintiffs());
+//        litigation.setNumberOfJointPlaintiffs(newLitigation.getNumberOfJointPlaintiffs());
         return litigationRepository.save(litigation);
     }
 
