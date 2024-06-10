@@ -115,7 +115,6 @@ components:
   schemas:
     Litigation:
       required:
-        - claimNumber
         - reason
         - type
       type: object
@@ -135,3 +134,35 @@ components:
           enum:
             - REASON1
             - REASON2
+        result:
+          type: string
+        caseNumber:
+          type: string
+        serviceOfProcessDate:
+          type: string
+          format: date
+        numberOfJointPlaintiffs:
+          type: integer
+          format: int32
+        sentenceYear:
+          type: integer
+          format: int32
+        sentenceNumber:
+          type: string
+        ownCosts:
+          type: number
+          format: double
+        thirdPartyCosts:
+          type: number
+          format: double
+        otherCosts:
+          type: number
+          format: double
+        note:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
