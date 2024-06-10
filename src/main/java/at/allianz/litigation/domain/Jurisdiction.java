@@ -41,6 +41,14 @@ public class Jurisdiction {
 
     private String reasonForResult;
 
+    private Double ownCosts;
+
+    private Double thirdPartyCosts;
+
+    private Double otherCosts;
+
+    private String note;
+
     @CreatedDate
     private Date createdAt;
 
@@ -157,5 +165,37 @@ public class Jurisdiction {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Double getOwnCosts() {
+        return ownCosts;
+    }
+
+    public void setOwnCosts(Double ownCosts) {
+        this.ownCosts = ownCosts;
+    }
+
+    public Double getThirdPartyCosts() {
+        return thirdPartyCosts;
+    }
+
+    public void setThirdPartyCosts(Double thirdPartyCosts) {
+        this.thirdPartyCosts = thirdPartyCosts;
+    }
+
+    public Double getOtherCosts() {
+        return otherCosts;
+    }
+
+    public void setOtherCosts(Double otherCosts) {
+        this.otherCosts = otherCosts;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

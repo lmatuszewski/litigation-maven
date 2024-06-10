@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -54,6 +55,19 @@ public class JurisdictionController {
     public Jurisdiction update(@PathVariable("id") final String id, @RequestBody final Jurisdiction newJurisdiction) {
         Jurisdiction jurisdiction = jurisdictionRepository.findById(id).get();
         jurisdiction.setLevel(newJurisdiction.getLevel());
+        jurisdiction.setCourt(newJurisdiction.getCourt());
+        jurisdiction.setAmountAwarded(newJurisdiction.getAmountAwarded());
+        jurisdiction.setAmountToDispute(newJurisdiction.getAmountToDispute());
+        jurisdiction.setResult(newJurisdiction.getResult());
+        jurisdiction.setStartDate(newJurisdiction.getStartDate());
+        jurisdiction.setEndDate(newJurisdiction.getEndDate());
+        jurisdiction.setTarrif(newJurisdiction.getTarrif());
+        jurisdiction.setReasonForResult(newJurisdiction.getReasonForResult());
+        jurisdiction.setTarrif(newJurisdiction.getTarrif());
+        jurisdiction.setOwnCosts(newJurisdiction.getOwnCosts());
+        jurisdiction.setThirdPartyCosts(newJurisdiction.getThirdPartyCosts());
+        jurisdiction.setOtherCosts(newJurisdiction.getOtherCosts());
+        jurisdiction.setNote(newJurisdiction.getNote());
         return jurisdictionRepository.save(jurisdiction);
     }
 

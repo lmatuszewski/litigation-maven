@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.data.annotation.CreatedDate;
@@ -47,12 +48,12 @@ public class Litigation {
 
 //    @JsonIgnore
     private String sentenceNumber;
+
 //    @OneToOne
-//    private User plaintiff;
+//    private Person plaintiff;
+
 //    @OneToOne
-//    private User defendand;
-//    @OneToOne
-//    private User createdBy;
+//    private Person defendand;
 
     private Double ownCosts;
 
