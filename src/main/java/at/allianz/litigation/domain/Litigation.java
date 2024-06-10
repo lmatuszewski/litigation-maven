@@ -30,22 +30,22 @@ public class Litigation {
     @NotNull
     private LitigationReason reason;
 
-    @JsonIgnore
+//    @JsonIgnore
     private String result;
 
-    @JsonIgnore
+//    @JsonIgnore
     private String caseNumber;
 
-    @JsonIgnore
+//    @JsonIgnore
     private LocalDate serviceOfProcessDate;
 
-    @JsonIgnore
+//    @JsonIgnore
     private Integer numberOfJointPlaintiffs;
 
-    @JsonIgnore
+//    @JsonIgnore
     private Integer sentenceYear;
 
-    @JsonIgnore
+//    @JsonIgnore
     private String sentenceNumber;
 //    @OneToOne
 //    private User plaintiff;
@@ -53,6 +53,14 @@ public class Litigation {
 //    private User defendand;
 //    @OneToOne
 //    private User createdBy;
+
+    private Double ownCosts;
+
+    private Double thirdPartyCosts;
+
+    private Double otherCosts;
+
+    private String note;
 
     @CreatedDate
     private Date createdAt;
@@ -81,6 +89,10 @@ public class Litigation {
                 ", numberOfJointPlaintiffs=" + numberOfJointPlaintiffs +
                 ", sentenceYear=" + sentenceYear +
                 ", sentenceNumber='" + sentenceNumber + '\'' +
+                ", ownCosts=" + ownCosts +
+                ", thirdPartyCosts=" + thirdPartyCosts +
+                ", otherCosts=" + otherCosts +
+                ", note='" + note + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
@@ -204,5 +216,37 @@ public class Litigation {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Double getOwnCosts() {
+        return ownCosts;
+    }
+
+    public void setOwnCosts(Double ownCosts) {
+        this.ownCosts = ownCosts;
+    }
+
+    public Double getThirdPartyCosts() {
+        return thirdPartyCosts;
+    }
+
+    public void setThirdPartyCosts(Double thirdPartyCosts) {
+        this.thirdPartyCosts = thirdPartyCosts;
+    }
+
+    public Double getOtherCosts() {
+        return otherCosts;
+    }
+
+    public void setOtherCosts(Double otherCosts) {
+        this.otherCosts = otherCosts;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

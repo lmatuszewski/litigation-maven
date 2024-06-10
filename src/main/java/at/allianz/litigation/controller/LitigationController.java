@@ -39,11 +39,18 @@ public class LitigationController {
     @ResponseStatus(HttpStatus.OK)
     public Litigation update(@PathVariable("id") final String id, @RequestBody final Litigation newLitigation) {
         Litigation litigation = litigationRepository.findById(id).get();
-//        litigation.setCaseNumber(newLitigation.getCaseNumber());
-//        litigation.setClaimNumber(newLitigation.getClaimNumber());
+        litigation.setCaseNumber(newLitigation.getCaseNumber());
+        litigation.setClaimNumber(newLitigation.getClaimNumber());
         litigation.setType(newLitigation.getType());
         litigation.setReason(newLitigation.getReason());
-//        litigation.setNumberOfJointPlaintiffs(newLitigation.getNumberOfJointPlaintiffs());
+        litigation.setNumberOfJointPlaintiffs(newLitigation.getNumberOfJointPlaintiffs());
+        litigation.setResult(newLitigation.getResult());
+        litigation.setSentenceYear(newLitigation.getSentenceYear());
+        litigation.setSentenceNumber(newLitigation.getSentenceNumber());
+        litigation.setOwnCosts(newLitigation.getOwnCosts());
+        litigation.setThirdPartyCosts(newLitigation.getThirdPartyCosts());
+        litigation.setOtherCosts(newLitigation.getOtherCosts());
+        litigation.setNote(newLitigation.getNote());
         return litigationRepository.save(litigation);
     }
 
