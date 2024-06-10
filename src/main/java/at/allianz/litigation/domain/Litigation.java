@@ -21,7 +21,7 @@ public class Litigation {
     @UuidGenerator
     private String id;
 
-    @NotNull
+//    @NotNull
     private String claimNumber;
 
     @NotNull
