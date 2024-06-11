@@ -4,7 +4,8 @@ public enum PersonType {
 
     PLAINTIFF("PLAINTIFF"),
     DEFENDANT("DEFENDANT"),
-    LAWYER("LAWYER");
+    LAWYER("LAWYER"),
+    JUDGE("JUDGE");
 
     private String value;
 

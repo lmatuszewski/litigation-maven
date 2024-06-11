@@ -63,5 +63,15 @@ public class App implements CommandLineRunner {
         personRepository.save(new Person(claimNumber, PersonType.LAWYER, "Mark", "Lawyer 2"));
         personRepository.save(new Person(claimNumber, PersonType.LAWYER, "Mark", "Lawyer 3"));
         personRepository.save(new Person(claimNumber, PersonType.LAWYER, "Mark", "Lawyer 4"));
+
+        personRepository.save(new Person(claimNumber, PersonType.DEFENDANT, "Steve", "Defendant 1"));
+        personRepository.save(new Person(claimNumber, PersonType.DEFENDANT, "Steve", "Defendant 2"));
+        personRepository.save(new Person(claimNumber, PersonType.DEFENDANT, "Steve", "Defendant 3"));
+        personRepository.save(new Person(claimNumber, PersonType.DEFENDANT, "Steve", "Defendant 4"));
+
+        personRepository.save(new Person(claimNumber, PersonType.JUDGE, "Anita", "Judge 1"));
+        personRepository.save(new Person(claimNumber, PersonType.JUDGE, "Anita", "Judge 2"));
+        personRepository.save(new Person(claimNumber, PersonType.JUDGE, "Anita", "Judge 3"));
+        personRepository.save(new Person(claimNumber, PersonType.JUDGE, "Anita", "Judge 4"));
     }
 }

@@ -1,6 +1,7 @@
 package at.allianz.litigation.controller;
 
 import at.allianz.litigation.domain.Person;
+import at.allianz.litigation.domain.PersonType;
 import at.allianz.litigation.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,11 @@ public class PersonController {
     @GetMapping("/by-claim/{claimNumber}")
     List<Person> findByClaimNumber(@PathVariable String claimNumber) {
         return personRepository.findAllByClaimNumber(claimNumber);
+    }
+
+    @GetMapping("/by-claim-and-type/{claimNumber}/{personType}")
+    List<Person> findByClaimNumber(@PathVariable String claimNumber, @PathVariable String personType) {
+        return personRepository.findAllByClaimNumberAndType(claimNumber, PersonType.valueOf(personType));
     }
 
     @GetMapping("/{id}")
