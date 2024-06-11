@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/jurisdictions")
 public class JurisdictionController {
+    /*
 
     @Autowired
     JurisdictionRepository jurisdictionRepository;
@@ -75,4 +76,5 @@ public class JurisdictionController {
     void delete(@PathVariable String id) {
         jurisdictionRepository.deleteById(id);
     }
+     */
 }
