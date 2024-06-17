@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/jurisdictions")
+@RequestMapping("/jurisdictions")
 public class JurisdictionController {
 
     @Autowired

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/litigations")
+@RequestMapping("/litigations")
 public class LitigationController {
-    /*
+
     @Autowired
     LitigationRepository litigationRepository;
 
@@ -58,5 +58,4 @@ public class LitigationController {
     void delete(@PathVariable String id) {
         litigationRepository.deleteById(id);
     }
-     */
 }
