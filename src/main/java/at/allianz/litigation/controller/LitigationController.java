@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/litigations")
 public class LitigationController {
-/*
+
     @Autowired
     LitigationRepository litigationRepository;
 
@@ -58,5 +58,5 @@ public class LitigationController {
     void delete(@PathVariable String id) {
         litigationRepository.deleteById(id);
     }
- */
+
 }
