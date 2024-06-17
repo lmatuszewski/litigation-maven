@@ -16,7 +16,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/jurisdictions")
 public class JurisdictionController {
-    /*
 
     @Autowired
     JurisdictionRepository jurisdictionRepository;
@@ -55,6 +54,7 @@ public class JurisdictionController {
     @ResponseStatus(HttpStatus.OK)
     public Jurisdiction update(@PathVariable("id") final String id, @RequestBody final Jurisdiction newJurisdiction) {
         Jurisdiction jurisdiction = jurisdictionRepository.findById(id).get();
+        // TODO: find better way to do that
         jurisdiction.setLevel(newJurisdiction.getLevel());
         jurisdiction.setCourt(newJurisdiction.getCourt());
         jurisdiction.setAmountAwarded(newJurisdiction.getAmountAwarded());
@@ -76,5 +76,4 @@ public class JurisdictionController {
     void delete(@PathVariable String id) {
         jurisdictionRepository.deleteById(id);
     }
-     */
 }
