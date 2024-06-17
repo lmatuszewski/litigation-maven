@@ -1,0 +1,329 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /litigations/{id}:
+    get:
+      tags:
+        - litigation-controller
+      operationId: get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Litigation'
+    put:
+      tags:
+        - litigation-controller
+      operationId: update
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Litigation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Litigation'
+    delete:
+      tags:
+        - litigation-controller
+      operationId: delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /jurisdictions/{id}:
+    get:
+      tags:
+        - jurisdiction-controller
+      operationId: get_1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Jurisdiction'
+    put:
+      tags:
+        - jurisdiction-controller
+      operationId: update_1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Jurisdiction'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Jurisdiction'
+    delete:
+      tags:
+        - jurisdiction-controller
+      operationId: delete_1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /litigations/:
+    get:
+      tags:
+        - litigation-controller
+      operationId: all
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Litigation'
+    post:
+      tags:
+        - litigation-controller
+      operationId: crate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Litigation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Litigation'
+  /jurisdictions/:
+    get:
+      tags:
+        - jurisdiction-controller
+      operationId: all_1
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Jurisdiction'
+    post:
+      tags:
+        - jurisdiction-controller
+      operationId: crate_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Jurisdiction'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /litigations/by-claim/{claimNumber}:
+    get:
+      tags:
+        - litigation-controller
+      operationId: findByClaimNumber
+      parameters:
+        - name: claimNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Litigation'
+  /jurisdictions/by-litigation/{litigationId}:
+    get:
+      tags:
+        - jurisdiction-controller
+      operationId: findAllByLitigationId
+      parameters:
+        - name: litigationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Jurisdiction'
+components:
+  schemas:
+    Litigation:
+      required:
+        - reason
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+        claimNumber:
+          type: string
+        type:
+          type: string
+          enum:
+            - ADMINISTRATIVE_PROCEEDING
+            - ALTERNATIVE_DISPUTE_RESOLUTION
+            - ARBITRATION_PROCEEDING
+        reason:
+          type: string
+          enum:
+            - REASON1
+            - REASON2
+        result:
+          type: string
+        caseNumber:
+          type: string
+        serviceOfProcessDate:
+          type: string
+          format: date
+        numberOfJointPlaintiffs:
+          type: integer
+          format: int32
+        sentenceYear:
+          type: integer
+          format: int32
+        sentenceNumber:
+          type: string
+        ownCosts:
+          type: number
+          format: double
+        thirdPartyCosts:
+          type: number
+          format: double
+        otherCosts:
+          type: number
+          format: double
+        note:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Jurisdiction:
+      required:
+        - level
+        - litigationId
+      type: object
+      properties:
+        id:
+          type: string
+        litigationId:
+          type: string
+        level:
+          type: string
+          enum:
+            - FIRST
+            - SECOND
+            - THIRD
+            - FOURTH
+            - FIFTH
+            - SIXTH
+        court:
+          type: string
+        amountToDispute:
+          type: number
+          format: double
+        result:
+          type: string
+        amountAwarded:
+          type: number
+          format: double
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        tarrif:
+          type: string
+        reasonForResult:
+          type: string
+        ownCosts:
+          type: number
+          format: double
+        thirdPartyCosts:
+          type: number
+          format: double
+        otherCosts:
+          type: number
+          format: double
+        note:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
