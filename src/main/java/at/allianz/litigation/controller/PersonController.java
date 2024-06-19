@@ -13,7 +13,6 @@ import java.util.List;
 @RequestMapping("/api/v1/people")
 public class PersonController {
 
-    /*
     @Autowired
     PersonRepository personRepository;
 
@@ -55,5 +54,4 @@ public class PersonController {
     void delete(@PathVariable String id) {
         personRepository.deleteById(id);
     }
-     */
 }

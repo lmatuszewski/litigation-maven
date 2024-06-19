@@ -31,7 +31,7 @@ public class LitigationController {
     }
 
     @PostMapping("/")
-    Litigation crate(@RequestBody Litigation litigation) {
+    Litigation create(@RequestBody Litigation litigation) {
         return litigationRepository.save(litigation);
     }
 
