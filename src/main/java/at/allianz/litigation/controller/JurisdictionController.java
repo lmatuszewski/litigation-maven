@@ -5,12 +5,12 @@ import at.allianz.litigation.repository.JurisdictionRepository;
 import at.allianz.litigation.repository.LitigationRepository;
 import jakarta.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -55,6 +55,7 @@ public class JurisdictionController {
     public Jurisdiction update(@PathVariable("id") final String id, @RequestBody final Jurisdiction newJurisdiction) {
         Jurisdiction jurisdiction = jurisdictionRepository.findById(id).get();
         // TODO: find better way to do that
+//        BeanUtils.copyProperties(jurisdiction, newJurisdiction);
         jurisdiction.setLevel(newJurisdiction.getLevel());
         jurisdiction.setCourt(newJurisdiction.getCourt());
         jurisdiction.setAmountAwarded(newJurisdiction.getAmountAwarded());
@@ -62,13 +63,19 @@ public class JurisdictionController {
         jurisdiction.setResult(newJurisdiction.getResult());
         jurisdiction.setStartDate(newJurisdiction.getStartDate());
         jurisdiction.setEndDate(newJurisdiction.getEndDate());
-        jurisdiction.setTarrif(newJurisdiction.getTarrif());
+        jurisdiction.setTariff(newJurisdiction.getTariff());
         jurisdiction.setReasonForResult(newJurisdiction.getReasonForResult());
-        jurisdiction.setTarrif(newJurisdiction.getTarrif());
+        jurisdiction.setTariff(newJurisdiction.getTariff());
         jurisdiction.setOwnCosts(newJurisdiction.getOwnCosts());
         jurisdiction.setThirdPartyCosts(newJurisdiction.getThirdPartyCosts());
         jurisdiction.setOtherCosts(newJurisdiction.getOtherCosts());
         jurisdiction.setNote(newJurisdiction.getNote());
+        jurisdiction.setAssignmentNumber(newJurisdiction.getAssignmentNumber());
+        jurisdiction.setCourtRefSign(newJurisdiction.getCourtRefSign());
+        jurisdiction.setOwnLawyer(newJurisdiction.getOwnLawyer());
+        jurisdiction.setOwnLawyerRefSign(newJurisdiction.getOwnLawyerRefSign());
+        jurisdiction.setThirdPartyLawyer(newJurisdiction.getThirdPartyLawyer());
+        jurisdiction.setThirdPartyLawyerRefSign(newJurisdiction.getThirdPartyLawyerRefSign());
         return jurisdictionRepository.save(jurisdiction);
     }
 

@@ -3,7 +3,6 @@ package at.allianz.litigation.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -18,36 +17,28 @@ public class Jurisdiction {
     @Id
     @UuidGenerator
     private String id;
-
-    @NotNull
+//    @NotNull
     private String litigationId;
-
-    @NotNull
+//    @NotNull
     private JurisdictionLevel level;
-
     private String court;
-
     private Double amountToDispute;
-
     private String result;
-
     private Double amountAwarded;
-
     private Date startDate;
-
     private Date endDate;
-
-    private String tarrif;
-
+    private String tariff;
     private String reasonForResult;
-
     private Double ownCosts;
-
     private Double thirdPartyCosts;
-
     private Double otherCosts;
-
     private String note;
+    private String assignmentNumber;
+    private String courtRefSign;
+    private String ownLawyer;
+    private String ownLawyerRefSign;
+    private String thirdPartyLawyer;
+    private String thirdPartyLawyerRefSign;
 
     @CreatedDate
     private Date createdAt;
@@ -135,12 +126,12 @@ public class Jurisdiction {
         this.endDate = endDate;
     }
 
-    public String getTarrif() {
-        return tarrif;
+    public String getTariff() {
+        return tariff;
     }
 
-    public void setTarrif(String tarrif) {
-        this.tarrif = tarrif;
+    public void setTariff(String tarrif) {
+        this.tariff = tarrif;
     }
 
     public String getReasonForResult() {
@@ -197,5 +188,53 @@ public class Jurisdiction {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getAssignmentNumber() {
+        return assignmentNumber;
+    }
+
+    public void setAssignmentNumber(String assignmentNumber) {
+        this.assignmentNumber = assignmentNumber;
+    }
+
+    public String getCourtRefSign() {
+        return courtRefSign;
+    }
+
+    public void setCourtRefSign(String courtRefSign) {
+        this.courtRefSign = courtRefSign;
+    }
+
+    public String getOwnLawyer() {
+        return ownLawyer;
+    }
+
+    public void setOwnLawyer(String ownLawyer) {
+        this.ownLawyer = ownLawyer;
+    }
+
+    public String getOwnLawyerRefSign() {
+        return ownLawyerRefSign;
+    }
+
+    public void setOwnLawyerRefSign(String ownLawyerRefSign) {
+        this.ownLawyerRefSign = ownLawyerRefSign;
+    }
+
+    public String getThirdPartyLawyer() {
+        return thirdPartyLawyer;
+    }
+
+    public void setThirdPartyLawyer(String thirdPartyLawyer) {
+        this.thirdPartyLawyer = thirdPartyLawyer;
+    }
+
+    public String getThirdPartyLawyerRefSign() {
+        return thirdPartyLawyerRefSign;
+    }
+
+    public void setThirdPartyLawyerRefSign(String thirdPartyLawyerRefSign) {
+        this.thirdPartyLawyerRefSign = thirdPartyLawyerRefSign;
     }
 }
